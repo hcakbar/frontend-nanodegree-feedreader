@@ -13,7 +13,7 @@ $(function() {
      * a related set of tests. This suite is all about the RSS
      * feeds definitions, the allFeeds variable in our application.
      */
-    describe('RSS Feeds Tests', function() {
+    describe('RSS Feeds Tests: ', function() {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
          * empty. Experiment with this before you get started on
@@ -48,7 +48,7 @@ $(function() {
     });
 
     /* Write a new test suite named "The menu" */
-    describe('Menu Tests', function() {
+    describe('Menu Tests: ', function() {
         /* test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
@@ -72,24 +72,42 @@ $(function() {
         })
     });
 
-    /* TODO: Write a new test suite named "Initial Entries" */
-    describe('Initial Entries Tests', function() {
-
-        /* TODO: Write a test that ensures when the loadFeed
+    /* Write a new test suite named "Initial Entries" */
+    describe('Initial Entries Tests: ', function() {
+        /* ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+        beforeEach(function(done) {
+            loadFeed(1, done);
+        });
+        it('loadFeed() should contain an element', function() {
+            expect($('.entry').length).toBeGreaterThan(0);
+        })
     });
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
-    describe('New Feed Selection', function() {
-
-        /* TODO: Write a test that ensures when a new feed is loaded
+    /* Write a new test suite named "New Feed Selection" */
+    describe('New Feed Selection: ', function() {
+        /* ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        let feedContentOne;
+        let feedContentTwo;
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                feedContentOne = $('.feed').contents();
+                loadFeed(1, function() {
+                    feedContentTwo = $('.feed').contents();
+                });
+                done();
+            });
+        });
 
+        it('loadFeed() content should change', function() {
+            expect(feedContentOne !== feedContentTwo).toBeTruthy();
+        });
     });
 }());
