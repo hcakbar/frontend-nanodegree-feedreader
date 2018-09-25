@@ -12,10 +12,8 @@ You will learn how to use Jasmine to write a number of tests against a pre-exist
 * Writing effective tests requires analyzing multiple aspects of an application including the HTML, CSS and JavaScript - an extremely important skill when changing teams or joining a new company.
 * Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
 
-# How will I complete this project?
-Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
-
-1. Take the JavaScript Testing [course](https://www.udacity.com/course/ud549)
+# How I completed this project?
+1. JavaScript Testing [course](https://www.udacity.com/course/ud549)
 2. Download the [required project assets](http://github.com/udacity/frontend-nanodegree-feedreader).
 3. Review the functionality of the application within your browser.
 4. Explore the application's HTML (**./index.html**), CSS (**./css/style.css**) and JavaScript (**./js/app.js**) to gain an understanding of how it works.
@@ -38,7 +36,7 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
 
 ## How to add tests / run Jasmine test
-1. Download Node, NPM, and Jasmine
+1. Download/Setup [Node](https://nodejs.org/en/download/), [NPM](https://www.npmjs.com/get-npm), and [Jasmine](https://jasmine.github.io/pages/getting_started.html)
 2. Add test(s) in feedreader.js (jasmine -> spec -> feedreader.js)
 3. Run index.html
 4. At the bottom of the page under Jasmine, all tests should pass.
