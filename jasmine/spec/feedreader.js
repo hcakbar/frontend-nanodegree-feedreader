@@ -84,8 +84,8 @@ $(function() {
             loadFeed(1, done);
         });
         it('loadFeed() should contain an element', function() {
-            expect($('.entry').length).toBeGreaterThan(0);
-        })
+            expect($('.feed .entry').length).toBeGreaterThan(0);
+        });
     });
 
     /* Write a new test suite named "New Feed Selection" */
